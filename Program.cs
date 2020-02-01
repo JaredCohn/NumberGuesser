@@ -11,7 +11,7 @@ namespace NumberGuesser
         {
             GetAppInfo(); // Runs GetAppInfo function to return Application details
 
-            GreetUser();
+            GreetUser(); // Runs GreetUser function to prompt users name and greet them.
 
             while (true)
             {
@@ -32,20 +32,20 @@ namespace NumberGuesser
                 while (guess != correctNumber)
                 {
                     // Get users input
-                    string input2 = Console.ReadLine();
+                    string input = Console.ReadLine();
 
-                    // Make sure it's a number
-                    if (!int.TryParse(input2, out guess))
+                    // Make sure input is a number
+                    if (!int.TryParse(input, out guess))
                     {
                         // Prints error message
                         PrintColorMessage(ConsoleColor.Red, "Please enter an actual number.");
 
-                        //  Keep going
+                        //  Continue till proper input is received.
                         continue;
                     }
 
-                    // Cast to int and put in guess
-                    guess = Int32.Parse(input2);
+                    // Cast user's guess to int and puts in guess variable.
+                    guess = Int32.Parse(input);
 
                     // Match guess to correct number
                     if (guess != correctNumber)
